@@ -1,6 +1,6 @@
-import "./style.css"; // Import your CSS
+import "./style.css";
 
-/* --- Three.js Background Waves --- */
+// --- Three.js Background Waves ---
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -14,10 +14,8 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(50);
-
 scene.background = new THREE.Color(0x000000);
 
-// Create animated wave plane (using bright blue 0x00ffff)
 const geometry = new THREE.PlaneGeometry(100, 100, 64, 64);
 const material = new THREE.MeshStandardMaterial({
   color: 0x00ffff,
@@ -29,7 +27,6 @@ const plane = new THREE.Mesh(geometry, material);
 scene.add(plane);
 plane.rotation.x = -Math.PI / 2;
 
-// Add lights (using bright blue 0x00ffff)
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 const pointLight = new THREE.PointLight(0x00ffff, 1);
 pointLight.position.set(5, 30, 5);
@@ -41,8 +38,7 @@ function animateWaves() {
   for (let i = 0; i < positions.length; i += 3) {
     const x = positions[i];
     const y = positions[i + 1];
-    positions[i + 2] =
-      Math.sin(x * 0.05 + time) * Math.cos(y * 0.05 + time) * 2;
+    positions[i + 2] = Math.sin(x * 0.05 + time) * Math.cos(y * 0.05 + time) * 2;
   }
   plane.geometry.attributes.position.needsUpdate = true;
 }
@@ -54,7 +50,7 @@ function animate() {
 }
 animate();
 
-/* --- Theme Toggle Logic --- */
+// --- Theme Toggle Logic ---
 const switchInput = document.querySelector(".switch__input");
 const logoImg = document.querySelector(".logo img");
 
@@ -82,7 +78,7 @@ window.addEventListener("resize", () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-/* --- Tabs Switching Logic for Quem Somos & Nossos Clientes --- */
+// --- Tabs Switching Logic for Quem Somos & Nossos Clientes ---
 document.addEventListener("DOMContentLoaded", () => {
   function setupTabs(containerSelector) {
     const menu = document.querySelector(`${containerSelector} .tabs-menu`);
@@ -108,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTabs("#nossos-clientes");
 });
 
-/* --- Navigation Scroll Offset --- */
+// --- Navigation Scroll Offset ---
 document.querySelectorAll("nav ul li a").forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
     event.preventDefault();
@@ -124,74 +120,80 @@ document.querySelectorAll("nav ul li a").forEach((anchor) => {
   });
 });
 
-/* --- Service Quote Modal & WhatsApp Integration --- */
+// --- Service Quote Modal & WhatsApp Integration ---
+// Use matchMedia to determine if we're on a desktop
 document.addEventListener("DOMContentLoaded", () => {
-  // Get modal elements
-  const modal = document.getElementById("serviceModal");
-  const modalMessage = document.getElementById("modalMessage");
-  const modalYes = document.getElementById("modalYes");
-  const modalNo = document.getElementById("modalNo");
-  const closeModal = document.getElementById("closeModal");
+  const isDesktop = !window.matchMedia("(max-width: 768px)").matches;
+  if (isDesktop) {
+    const modal = document.getElementById("serviceModal");
+    const modalMessage = document.getElementById("modalMessage");
+    const modalYes = document.getElementById("modalYes");
+    const modalNo = document.getElementById("modalNo");
+    const closeModal = document.getElementById("closeModal");
 
-  // Attach click event to each service card (carousel-item)
-  const serviceCards = document.querySelectorAll(".carousel-item");
-  serviceCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const titleElement = card.querySelector(".service-title");
-      const serviceName = titleElement
-        ? titleElement.innerText.trim()
-        : "Serviço";
-      modalMessage.textContent = `Quer fazer um orçamento de um ${serviceName}?`;
-      modal.setAttribute("data-service", serviceName);
-      modal.style.display = "block";
+    const serviceCards = document.querySelectorAll(".carousel-item");
+    serviceCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const titleElement = card.querySelector(".service-title");
+        const serviceName = titleElement
+          ? titleElement.innerText.trim()
+          : "Serviço";
+        modalMessage.textContent = `Quer fazer um orçamento de um ${serviceName}?`;
+        modal.setAttribute("data-service", serviceName);
+        modal.style.display = "block";
+      });
     });
-  });
 
-  // When "Sim" is clicked, open WhatsApp with prefilled message
-  modalYes.addEventListener("click", () => {
-    const serviceName = modal.getAttribute("data-service") || "Serviço";
-    const phoneNumber = "5515991569195"; // Replace with your WhatsApp number
-    const text = `Olá! Gostaria de um orçamento para um serviço de ${serviceName}.`;
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      text
-    )}`;
-    window.open(whatsappURL, "_blank");
-    modal.style.display = "none";
-  });
-
-  // When "Cancelar" is clicked, close the modal
-  modalNo.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // Close modal when clicking the close button
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // Close modal when clicking outside modal content
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
+    modalYes.addEventListener("click", () => {
+      const serviceName = modal.getAttribute("data-service") || "Serviço";
+      const phoneNumber = "5515991569195"; // Replace with your WhatsApp number
+      const text = `Olá! Gostaria de um orçamento para um serviço de ${serviceName}.`;
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+        text
+      )}`;
+      window.open(whatsappURL, "_blank");
       modal.style.display = "none";
-    }
-  });
+    });
+
+    modalNo.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 });
 
-/* --- Contact Form WhatsApp Integration --- */
+// --- Contact Form WhatsApp Integration ---
 document.getElementById("contact-form").addEventListener("submit", (event) => {
   event.preventDefault();
-
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
-
   if (!name || !email || !message) {
     alert("Por favor, preencha todos os campos antes de enviar.");
     return;
   }
-
   const phoneNumber = "5515991569195";
   const text = `Olá, meu nome é *${name}*.\nMeu e-mail: *${email}*\n\nMensagem:\n${message}`;
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    text
+  )}`;
   window.open(whatsappURL, "_blank");
+});
+
+// --- Mobile Navigation Toggle ---
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
 });

@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const serviceName = titleElement
           ? titleElement.innerText.trim()
           : "Serviço";
-        modalMessage.textContent = `Quer fazer um orçamento de um ${serviceName}?`;
+        modalMessage.textContent = `Quer fazer um orçamento de ${serviceName}?`;
         modal.setAttribute("data-service", serviceName);
         modal.style.display = "block";
       });

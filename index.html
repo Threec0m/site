@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="assets/main-branco-sfund.png">
   <title>Tech Geenie</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -50,7 +51,7 @@
         <ul>
           <li><a href="#services">Serviços</a></li>
           <li><a href="#quem-somos">Quem Somos</a></li>
-          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#nossos-clientes">Nossos Clientes</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
@@ -66,9 +67,9 @@
               <img src="assets/websites.jpg" alt="Service 1" />
               <div class="service-title">Website</div>
               <div class="overlay">
-                <h3>Website</h3>
+                <h3>Websites</h3>
                 <p>
-                  Websites – Criação e design de sites modernos com foco em
+                  Criação e design de sites modernos com foco em
                   qualidade, performance e experiência do usuário para
                   empresas que desejam se destacar no mercado.
                 </p>
@@ -78,9 +79,9 @@
               <img src="assets/systems.jpeg" alt="Service 2" />
               <div class="service-title">Sistema</div>
               <div class="overlay">
-                <h3>Sistema</h3>
+                <h3>Sistemas</h3>
                 <p>
-                  Sistemas – Desenvolvimento de sistemas robustos, escaláveis
+                 Desenvolvimento de sistemas robustos, escaláveis
                   e seguros, ideais para empresas que precisam de soluções
                   personalizadas e eficientes.
                 </p>
@@ -90,9 +91,9 @@
               <img src="assets/phone.png" alt="Service 3" />
               <div class="service-title">App</div>
               <div class="overlay">
-                <h3>App</h3>
+                <h3>Apps</h3>
                 <p>
-                  Apps – Criação de aplicativos móveis e web interativos,
+                 Criação de aplicativos móveis e web interativos,
                   projetados para oferecer uma experiência intuitiva e de alta
                   performance para negócios modernos.
                 </p>
@@ -104,7 +105,7 @@
               <div class="overlay">
                 <h3>Mídia Social</h3>
                 <p>
-                  Mídia Social – Estratégias de mídia social e gerenciamento de
+                  Estratégias de mídia social e gerenciamento de
                   conteúdo, auxiliando empresas a aumentar seu engajamento e
                   presença nas redes com soluções de alta qualidade.
                 </p>
@@ -116,7 +117,7 @@
               <div class="overlay">
                 <h3>CyberSegurança</h3>
                 <p>
-                  CyberSegurança – Soluções avançadas em segurança digital
+                  Soluções avançadas em segurança digital
                   para proteger ativos e dados sensíveis, garantindo que sua
                   empresa opere com máxima segurança e confiança.
                 </p>
@@ -124,11 +125,11 @@
             </div>
             <div class="carousel-item">
               <img src="assets/hardware.jpg" alt="Service 6" />
-              <div class="service-title">Hardware</div>
+              <div class="service-title">Suporte Técnico</div>
               <div class="overlay">
-                <h3>Hardware</h3>
+                <h3>Suporte Técnico</h3>
                 <p>
-                  Hardware – Suporte técnico especializado e manutenção
+                  Suporte técnico especializado e manutenção
                   preventiva para infraestrutura de TI, assegurando máxima
                   eficiência e confiabilidade para o seu negócio.
                 </p>
@@ -294,22 +295,56 @@
   </div>
 </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+<!-- Contact Section -->
+<section id="contact">
+  <div class="contact-container">
+    <!-- Left Side: Contact Information & Form -->
+    <div class="contact-info">
       <h2>📞 Fale Conosco</h2>
+      <p>
+        Entre em contato para mais informações, orçamentos ou dúvidas. Estamos sempre prontos para ajudá-lo e transformar suas ideias em realidade digital.
+      </p>
+      <ul>
+        <li><strong>Telefone:</strong> (15) 99156-9195</li>
+        <li><strong>Email:</strong> contato@techgeenie.com.br</li>
+        <li><strong>Endereço:</strong> Rua santa clara, 446, Centro, Sorocaba</li>
+      </ul>
       <form id="contact-form">
         <input type="text" placeholder="Seu Nome" required />
         <input type="email" placeholder="Seu Email" required />
         <textarea placeholder="Sua Mensagem" required></textarea>
         <button type="submit">Enviar</button>
       </form>
-    </section>
-
+    </div>
+    <!-- Right Side: Google Map -->
+    <div class="contact-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2656712697323!2d-47.435061284894414!3d-23.5011014849375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2484235ecb5f%3A0xd7c147d31a98ac7c!2sRua%20Santa%20Clara%2C%20446%20-%20Centro%2C%20Sorocaba%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1616161616161" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
     <!-- Footer -->
     <footer>
       <p>&copy; 2025 Tech Geenie. Todos os direitos reservados.</p>
     </footer>
   </main>
+
+  <!-- Service Modal -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <p id="modalMessage">Quer fazer um orçamento de um ...?</p>
+    <button id="modalYes">Sim</button>
+    <button id="modalNo">Cancelar</button>
+  </div>
+</div>
+
 
   <!-- Load Three.js from a CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

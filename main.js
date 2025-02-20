@@ -54,7 +54,7 @@ function animate() {
 }
 animate();
 
-// Theme Toggle Logic using the switch input
+/* --- Theme Toggle Logic --- */
 const switchInput = document.querySelector('.switch__input');
 const logoImg = document.querySelector('.logo img');
 
@@ -79,12 +79,14 @@ switchInput.addEventListener('change', () => {
   }
 });
 
-// Optional: Handle window resize for Three.js
+// Handle window resize for Three.js
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
+/* --- Tabs Switching Logic --- */
 document.addEventListener('DOMContentLoaded', () => {
   // Tab switching for Quem Somos section
   const quemSomosMenu = document.querySelector('#quem-somos .tabs-menu');
@@ -119,3 +121,56 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/* --- Modal Functionality for Service Cards --- */
+document.addEventListener('DOMContentLoaded', () => {
+  // Get modal elements
+  const modal = document.getElementById('serviceModal');
+  const modalMessage = document.getElementById('modalMessage');
+  const modalYes = document.getElementById('modalYes');
+  const modalNo = document.getElementById('modalNo');
+  const closeModal = document.getElementById('closeModal');
+
+  // Attach click events to each service card
+  const serviceCards = document.querySelectorAll('.carousel-item');
+  serviceCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Get the service name from the .service-title element
+      const titleElement = card.querySelector('.service-title');
+      const serviceName = titleElement ? titleElement.textContent.trim() : "Serviço";
+      
+      // Update modal message with the service name
+      modalMessage.textContent = `Quer fazer um orçamento de ${serviceName}?`;
+      modal.setAttribute('data-service', serviceName);
+      
+      // Show the modal
+      modal.style.display = 'block';
+    });
+  });
+
+  // When "Sim" is clicked, open WhatsApp chat with prefilled message
+  modalYes.addEventListener('click', () => {
+    const serviceName = modal.getAttribute('data-service') || "Serviço";
+    const whatsappNumber = "5515991569195"; // Replace with your business number (international format without +)
+    const text = encodeURIComponent(`Olá, gostaria de um orçamento para o serviço de ${serviceName}.`);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(whatsappUrl, '_blank');
+    modal.style.display = 'none';
+  });
+
+  // Close modal when "Cancelar" is clicked
+  modalNo.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Close modal when clicking the close button
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Close modal when clicking outside the modal content
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});

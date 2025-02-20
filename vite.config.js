@@ -1,9 +1,8 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 
 export default defineConfig({
+  // Default root is '.', so index.html is in the root.
   build: {
-    rollupOptions: {
-      input: "index.html", // Ensures Vite recognizes the entry file
-    },
-  },
+    outDir: 'dist'
+  }
 });

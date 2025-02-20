@@ -1,4 +1,5 @@
-import "./style.css";
+import "./style.css"; // Import your CSS
+
 /* --- Three.js Background Waves --- */
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -14,7 +15,6 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(50);
 
-// Set default dark-mode background for scene
 scene.background = new THREE.Color(0x000000);
 
 // Create animated wave plane (using bright blue 0x00ffff)
@@ -35,7 +35,6 @@ const pointLight = new THREE.PointLight(0x00ffff, 1);
 pointLight.position.set(5, 30, 5);
 scene.add(ambientLight, pointLight);
 
-// Animate waves
 function animateWaves() {
   const positions = plane.geometry.attributes.position.array;
   const time = Date.now() * 0.0003;
@@ -77,27 +76,30 @@ switchInput.addEventListener("change", () => {
   }
 });
 
-/* --- Handle Window Resize for Three.js --- */
 window.addEventListener("resize", () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-/* --- Tab Switching for Quem Somos & Nossos Clientes --- */
+/* --- Tabs Switching Logic for Quem Somos & Nossos Clientes --- */
 document.addEventListener("DOMContentLoaded", () => {
   function setupTabs(containerSelector) {
     const menu = document.querySelector(`${containerSelector} .tabs-menu`);
     if (menu) {
       const tabButtons = menu.querySelectorAll(".tab-button");
-      const tabContents = document.querySelectorAll(`${containerSelector} .tabs-content .tab-content`);
+      const tabContents = document.querySelectorAll(
+        `${containerSelector} .tabs-content .tab-content`
+      );
       tabButtons.forEach((button) => {
         button.addEventListener("click", () => {
           tabButtons.forEach((btn) => btn.classList.remove("active"));
           tabContents.forEach((content) => content.classList.remove("active"));
           button.classList.add("active");
           const tabID = button.getAttribute("data-tab");
-          document.querySelector(`${containerSelector} .tabs-content #${tabID}`).classList.add("active");
+          document
+            .querySelector(`${containerSelector} .tabs-content #${tabID}`)
+            .classList.add("active");
         });
       });
     }
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTabs("#nossos-clientes");
 });
 
-/* --- Fix Scroll Navigation (Avoid Cutting Titles Under Header) --- */
+/* --- Navigation Scroll Offset --- */
 document.querySelectorAll("nav ul li a").forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
     event.preventDefault();
@@ -123,15 +125,54 @@ document.querySelectorAll("nav ul li a").forEach((anchor) => {
 });
 
 /* --- Service Quote Modal & WhatsApp Integration --- */
-document.querySelectorAll(".carousel-item").forEach((serviceCard) => {
-  serviceCard.addEventListener("click", () => {
-    const serviceName = serviceCard.querySelector(".service-title").innerText;
-    const confirmQuote = confirm(`Quer fazer um orçamento de um ${serviceName}?`);
-    if (confirmQuote) {
-      const phoneNumber = "5515991569195";
-      const text = `Olá! Gostaria de um orçamento para um serviço de ${serviceName}.`;
-      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-      window.open(whatsappURL, "_blank");
+document.addEventListener("DOMContentLoaded", () => {
+  // Get modal elements
+  const modal = document.getElementById("serviceModal");
+  const modalMessage = document.getElementById("modalMessage");
+  const modalYes = document.getElementById("modalYes");
+  const modalNo = document.getElementById("modalNo");
+  const closeModal = document.getElementById("closeModal");
+
+  // Attach click event to each service card (carousel-item)
+  const serviceCards = document.querySelectorAll(".carousel-item");
+  serviceCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const titleElement = card.querySelector(".service-title");
+      const serviceName = titleElement
+        ? titleElement.innerText.trim()
+        : "Serviço";
+      modalMessage.textContent = `Quer fazer um orçamento de um ${serviceName}?`;
+      modal.setAttribute("data-service", serviceName);
+      modal.style.display = "block";
+    });
+  });
+
+  // When "Sim" is clicked, open WhatsApp with prefilled message
+  modalYes.addEventListener("click", () => {
+    const serviceName = modal.getAttribute("data-service") || "Serviço";
+    const phoneNumber = "5515991569195"; // Replace with your WhatsApp number
+    const text = `Olá! Gostaria de um orçamento para um serviço de ${serviceName}.`;
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      text
+    )}`;
+    window.open(whatsappURL, "_blank");
+    modal.style.display = "none";
+  });
+
+  // When "Cancelar" is clicked, close the modal
+  modalNo.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close modal when clicking the close button
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close modal when clicking outside modal content
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
     }
   });
 });
@@ -150,8 +191,7 @@ document.getElementById("contact-form").addEventListener("submit", (event) => {
   }
 
   const phoneNumber = "5515991569195";
-  const text = `Olá, meu nome é *${name}*.\nMeu e-mail: *${email}*\n\n${message}`;
+  const text = `Olá, meu nome é *${name}*.\nMeu e-mail: *${email}*\n\nMensagem:\n${message}`;
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-
   window.open(whatsappURL, "_blank");
 });

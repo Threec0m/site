@@ -7,7 +7,7 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 const renderer = new THREE.WebGLRenderer({
-  canvas: document.querySelector('#bg'),
+  canvas: document.querySelector("#bg"),
 });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -55,23 +55,20 @@ function animate() {
 animate();
 
 /* --- Theme Toggle Logic --- */
-const switchInput = document.querySelector('.switch__input');
-const logoImg = document.querySelector('.logo img');
+const switchInput = document.querySelector(".switch__input");
+const logoImg = document.querySelector(".logo img");
 
-// Set default state to true (dark mode active)
 switchInput.checked = true;
 
-switchInput.addEventListener('change', () => {
+switchInput.addEventListener("change", () => {
   if (switchInput.checked) {
-    // Dark Mode: When switch is checked, dark mode active.
-    document.body.classList.remove('light-mode');
+    document.body.classList.remove("light-mode");
     scene.background = new THREE.Color(0x000000);
     plane.material.color.set(0x00ffff);
     pointLight.color.set(0x00ffff);
     logoImg.src = "./assets/text-branco-sfund.png";
   } else {
-    // Light Mode: When unchecked, light mode active.
-    document.body.classList.add('light-mode');
+    document.body.classList.add("light-mode");
     scene.background = new THREE.Color(0xffffff);
     plane.material.color.set(0x0061fc);
     pointLight.color.set(0x0061fc);
@@ -79,98 +76,81 @@ switchInput.addEventListener('change', () => {
   }
 });
 
-// Handle window resize for Three.js
-window.addEventListener('resize', () => {
+/* --- Handle Window Resize for Three.js --- */
+window.addEventListener("resize", () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-/* --- Tabs Switching Logic --- */
-document.addEventListener('DOMContentLoaded', () => {
-  // Tab switching for Quem Somos section
-  const quemSomosMenu = document.querySelector('#quem-somos .tabs-menu');
-  if (quemSomosMenu) {
-    const tabButtons = quemSomosMenu.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('#quem-somos .tabs-content .tab-content');
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-        button.classList.add('active');
-        const tabID = button.getAttribute('data-tab');
-        document.querySelector(`#quem-somos .tabs-content #${tabID}`).classList.add('active');
+/* --- Tab Switching for Quem Somos & Nossos Clientes --- */
+document.addEventListener("DOMContentLoaded", () => {
+  function setupTabs(containerSelector) {
+    const menu = document.querySelector(`${containerSelector} .tabs-menu`);
+    if (menu) {
+      const tabButtons = menu.querySelectorAll(".tab-button");
+      const tabContents = document.querySelectorAll(`${containerSelector} .tabs-content .tab-content`);
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          tabButtons.forEach((btn) => btn.classList.remove("active"));
+          tabContents.forEach((content) => content.classList.remove("active"));
+          button.classList.add("active");
+          const tabID = button.getAttribute("data-tab");
+          document.querySelector(`${containerSelector} .tabs-content #${tabID}`).classList.add("active");
+        });
       });
-    });
+    }
   }
-
-  // Tab switching for Nossos Clientes section
-  const nossosClientesMenu = document.querySelector('#nossos-clientes .tabs-menu');
-  if (nossosClientesMenu) {
-    const tabButtons = nossosClientesMenu.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('#nossos-clientes .tabs-content .tab-content');
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-        button.classList.add('active');
-        const tabID = button.getAttribute('data-tab');
-        document.querySelector(`#nossos-clientes .tabs-content #${tabID}`).classList.add('active');
-      });
-    });
-  }
+  setupTabs("#quem-somos");
+  setupTabs("#nossos-clientes");
 });
 
-/* --- Modal Functionality for Service Cards --- */
-document.addEventListener('DOMContentLoaded', () => {
-  // Get modal elements
-  const modal = document.getElementById('serviceModal');
-  const modalMessage = document.getElementById('modalMessage');
-  const modalYes = document.getElementById('modalYes');
-  const modalNo = document.getElementById('modalNo');
-  const closeModal = document.getElementById('closeModal');
-
-  // Attach click events to each service card
-  const serviceCards = document.querySelectorAll('.carousel-item');
-  serviceCards.forEach(card => {
-    card.addEventListener('click', () => {
-      // Get the service name from the .service-title element
-      const titleElement = card.querySelector('.service-title');
-      const serviceName = titleElement ? titleElement.textContent.trim() : "Serviço";
-      
-      // Update modal message with the service name
-      modalMessage.textContent = `Quer fazer um orçamento de ${serviceName}?`;
-      modal.setAttribute('data-service', serviceName);
-      
-      // Show the modal
-      modal.style.display = 'block';
-    });
-  });
-
-  // When "Sim" is clicked, open WhatsApp chat with prefilled message
-  modalYes.addEventListener('click', () => {
-    const serviceName = modal.getAttribute('data-service') || "Serviço";
-    const whatsappNumber = "5515991569195"; // Replace with your business number (international format without +)
-    const text = encodeURIComponent(`Olá, gostaria de um orçamento para o serviço de ${serviceName}.`);
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
-    window.open(whatsappUrl, '_blank');
-    modal.style.display = 'none';
-  });
-
-  // Close modal when "Cancelar" is clicked
-  modalNo.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Close modal when clicking the close button
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Close modal when clicking outside the modal content
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
+/* --- Fix Scroll Navigation (Avoid Cutting Titles Under Header) --- */
+document.querySelectorAll("nav ul li a").forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetId = anchor.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const offset = document.querySelector(".site-header").offsetHeight + 20;
+      window.scrollTo({
+        top: targetElement.offsetTop - offset,
+        behavior: "smooth",
+      });
     }
   });
+});
+
+/* --- Service Quote Modal & WhatsApp Integration --- */
+document.querySelectorAll(".carousel-item").forEach((serviceCard) => {
+  serviceCard.addEventListener("click", () => {
+    const serviceName = serviceCard.querySelector(".service-title").innerText;
+    const confirmQuote = confirm(`Quer fazer um orçamento de um ${serviceName}?`);
+    if (confirmQuote) {
+      const phoneNumber = "5515991569195";
+      const text = `Olá! Gostaria de um orçamento para um serviço de ${serviceName}.`;
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+      window.open(whatsappURL, "_blank");
+    }
+  });
+});
+
+/* --- Contact Form WhatsApp Integration --- */
+document.getElementById("contact-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  if (!name || !email || !message) {
+    alert("Por favor, preencha todos os campos antes de enviar.");
+    return;
+  }
+
+  const phoneNumber = "5515991569195";
+  const text = `Olá, meu nome é *${name}*.\nMeu e-mail: *${email}*\n\n${message}`;
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+  window.open(whatsappURL, "_blank");
 });

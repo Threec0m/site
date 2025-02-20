@@ -1,3 +1,4 @@
+import "./style.css";
 /* --- Three.js Background Waves --- */
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(

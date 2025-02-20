@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tech Geenie</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- Toggle Switch (using provided markup) -->
+  <label class="switch">
+    <input class="switch__input" type="checkbox" role="switch">
+    <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+      <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+        <circle cx="6" cy="6" r="2" />
+        <g stroke-dasharray="1.5 1.5">
+          <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+          <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+          <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+          <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+          <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+          <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+          <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+          <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+        </g>
+      </g>
+    </svg>
+    <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+      <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+        <path
+          d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z" />
+      </g>
+    </svg>
+    <span class="switch__sr">Dark Mode</span>
+  </label>
 
   <!-- Background Waves -->
   <canvas id="bg"></canvas>
 
   <!-- Main Content -->
   <main>
-
     <!-- Header -->
     <header class="site-header">
       <div class="logo">
@@ -22,37 +49,253 @@
       <nav>
         <ul>
           <li><a href="#services">Serviços</a></li>
+          <li><a href="#quem-somos">Quem Somos</a></li>
           <li><a href="#projects">Projetos</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="fade-in">
-      <h1>Com a Tech Geenie, seus desejos tecnológicos se tornam realidade!</h1>
-      <a href="#contact" class="hero-button">Fale Conosco</a>
+    <!-- Services Section (Carousel) -->
+    <section id="services">
+      <h2>💻 Serviços</h2>
+      <div class="carousel-wrapper">
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="carousel-item">
+              <img src="assets/websites.jpg" alt="Service 1" />
+              <div class="service-title">Website</div>
+              <div class="overlay">
+                <h3>Website</h3>
+                <p>
+                  Websites – Criação e design de sites modernos com foco em
+                  qualidade, performance e experiência do usuário para
+                  empresas que desejam se destacar no mercado.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/systems.jpeg" alt="Service 2" />
+              <div class="service-title">Sistema</div>
+              <div class="overlay">
+                <h3>Sistema</h3>
+                <p>
+                  Sistemas – Desenvolvimento de sistemas robustos, escaláveis
+                  e seguros, ideais para empresas que precisam de soluções
+                  personalizadas e eficientes.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/phone.png" alt="Service 3" />
+              <div class="service-title">App</div>
+              <div class="overlay">
+                <h3>App</h3>
+                <p>
+                  Apps – Criação de aplicativos móveis e web interativos,
+                  projetados para oferecer uma experiência intuitiva e de alta
+                  performance para negócios modernos.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/social-media.jpg" alt="Service 4" />
+              <div class="service-title">Mídia Social</div>
+              <div class="overlay">
+                <h3>Mídia Social</h3>
+                <p>
+                  Mídia Social – Estratégias de mídia social e gerenciamento de
+                  conteúdo, auxiliando empresas a aumentar seu engajamento e
+                  presença nas redes com soluções de alta qualidade.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/security.jpg" alt="Service 5" />
+              <div class="service-title">CyberSegurança</div>
+              <div class="overlay">
+                <h3>CyberSegurança</h3>
+                <p>
+                  CyberSegurança – Soluções avançadas em segurança digital
+                  para proteger ativos e dados sensíveis, garantindo que sua
+                  empresa opere com máxima segurança e confiança.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/hardware.jpg" alt="Service 6" />
+              <div class="service-title">Hardware</div>
+              <div class="overlay">
+                <h3>Hardware</h3>
+                <p>
+                  Hardware – Suporte técnico especializado e manutenção
+                  preventiva para infraestrutura de TI, assegurando máxima
+                  eficiência e confiabilidade para o seu negócio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="fade-in">
-      <h2>💻 Nossos Serviços</h2>
-      <ul>
-        <li>Custom Website Design</li>
-        <li>Responsive Development</li>
-        <li>SEO Optimization</li>
-        <li>Website Maintenance</li>
-      </ul>
+    <!-- Quem Somos Section (Upgraded with Tabs) -->
+    <section id="quem-somos">
+      <h2>🌎 Quem Somos</h2>
+      <div class="tabs-container">
+        <!-- Left Side Menu -->
+        <nav class="tabs-menu">
+          <button class="tab-button active" data-tab="founder">
+            <img src="assets/founder.png" alt="Sobre o Fundador" />
+          </button>
+          <button class="tab-button" data-tab="company">
+            <img src="assets/main-preto-cfund.jpg" alt="Sobre a Empresa" />
+          </button>
+          <button class="tab-button" data-tab="mission">
+            <img src="assets/globe.jpg" alt="Nossa Missão" />
+          </button>
+        </nav>
+        <!-- Right Side Content -->
+        <div class="tabs-content">
+          <div class="tab-content active" id="founder">
+            <div class="neon-card">
+              <h3>Sobre o Fundador</h3>
+              <p>
+                Juan é um desenvolvedor full stack e especialista em cibersegurança, com mais de uma década de
+                experiência no setor de tecnologia. Sua jornada começou em 2014, quando iniciou seus primeiros projetos
+                de desenvolvimento de software, explorando linguagens modernas e arquiteturas inovadoras. Com o passar
+                dos anos, aprofundou seus conhecimentos e se especializou em <strong>JavaScript, Ruby, C#, .NET e
+                  segurança cibernética</strong>, criando soluções robustas e protegidas para empresas que necessitam de
+                <strong>performance, escalabilidade e alta segurança</strong>.
+              </p>
+              <p>
+                Após anos atuando no mercado e adquirindo experiência prática no desenvolvimento e na segurança da
+                informação, Juan decidiu formalizar seus conhecimentos e se formou com um <strong>diploma em Engenharia
+                  da Computação e Cibersegurança</strong>. Sua especialização em <strong>testes de intrusão e defesa
+                  cibernética</strong> permitiu que ele combinasse habilidades avançadas em programação com uma
+                abordagem de <strong>segurança ofensiva e defensiva</strong>, garantindo que cada sistema projetado
+                fosse <strong>eficiente, confiável e resistente a ataques</strong>.
+              </p>
+              <p>
+                Ao longo dos anos, ele trabalhou em diversos projetos, desde <strong>desenvolvimento de plataformas
+                  empresariais e aplicações web até auditorias de segurança e testes de vulnerabilidade</strong>. Seu
+                objetivo com a <strong>Tech Geenie</strong> é levar ao mercado <strong>soluções tecnológicas inovadoras,
+                  altamente seguras e preparadas para o futuro</strong>, ajudando empresas a crescer com confiança no
+                ambiente digital.
+              </p>
+            </div>
+          </div>
+          <div class="tab-content" id="company">
+            <div class="neon-card">
+              <h3>Sobre a Empresa</h3>
+              <p>
+                A <strong>Tech Geenie</strong> nasceu para preencher uma lacuna no mercado de tecnologia: a necessidade
+                de soluções digitais que não apenas funcionem, mas que sejam <strong>rápidas, seguras e
+                  escaláveis</strong>. Somos uma empresa especializada no <strong>desenvolvimento de software, criação
+                  de websites, sistemas empresariais e aplicações customizadas</strong>, sempre priorizando
+                <strong>performance, experiência do usuário e cibersegurança</strong>.
+              </p>
+              <p>
+                Nosso diferencial está na <strong>expertise técnica avançada</strong> e no compromisso com <strong>alta
+                  qualidade e inovação</strong>. Trabalhamos com tecnologias modernas, como <strong>frameworks de alto
+                  desempenho, arquiteturas otimizadas e práticas de segurança de última geração</strong>, garantindo que
+                cada solução entregue não apenas atenda às expectativas dos clientes, mas também <strong>supere os
+                  padrões do mercado</strong>.
+              </p>
+              <p>
+                Combinamos <strong>desenvolvimento ágil, infraestrutura otimizada e proteção digital</strong> para criar
+                plataformas estáveis e escaláveis, prontas para atender empresas de todos os portes. Seja na construção
+                de <strong>sistemas personalizados, na implementação de medidas de segurança robustas ou no
+                  desenvolvimento de soluções para startups e grandes empresas</strong>, a <strong>Tech Geenie</strong>
+                está preparada para transformar ideias em realidade digital.
+              </p>
+            </div>
+          </div>
+          <div class="tab-content" id="mission">
+            <div class="neon-card">
+              <h3>Nossa Missão</h3>
+              <p>
+                Na <strong>Tech Geenie</strong>, acreditamos que a tecnologia deve ser <strong>rápida, eficiente e
+                  segura</strong>. Nossa missão é oferecer <strong>soluções digitais que não apenas funcionem, mas que
+                  impulsionem negócios, otimizem processos e garantam total proteção contra ameaças
+                  cibernéticas</strong>.
+              </p>
+              <p>
+                Nosso compromisso é desenvolver <strong>websites, sistemas e aplicações de alta performance</strong>,
+                combinando inovação com <strong>arquitetura escalável e segurança avançada</strong>. Cada projeto é
+                pensado para atender às necessidades dos nossos clientes com <strong>máxima eficiência, usabilidade e
+                  confiabilidade</strong>.
+              </p>
+              <p>
+                Ao integrar <strong>tecnologias emergentes, metodologias de desenvolvimento ágil e práticas avançadas de
+                  segurança</strong>, ajudamos empresas a crescer e operar com segurança no ambiente digital. A
+                <strong>Tech Geenie</strong> não apenas cria tecnologia, mas <strong>molda o futuro digital</strong>,
+                sempre priorizando <strong>inovação, qualidade e proteção</strong>. 🚀
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="fade-in">
-      <h2>🚀 Projetos Recentes</h2>
-      <p>Veja alguns dos nossos projetos incríveis realizados para nossos clientes.</p>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="fade-in">
+<!-- Nossos Clientes Section (Testemunhos) -->
+<section id="nossos-clientes">
+  <h2>💬 Nossos Clientes</h2>
+  <div class="tabs-container">
+    <!-- Left Side Content (Testemunhos) -->
+    <div class="tabs-content">
+      <div class="tab-content active" id="client1">
+        <div class="neon-card">
+          <h3>Threecom Tecnologia</h3>
+          <p>
+            "A Tech Geenie foi essencial na modernização da nossa infraestrutura digital. Além de otimizar a performance dos nossos sistemas, trouxeram um nível de segurança cibernética que nos dá total confiança para operar sem preocupações. 
+          </p>
+          <p>
+            A equipe demonstrou um profundo conhecimento técnico e uma capacidade incrível de entender nossas necessidades, oferecendo soluções que realmente fizeram a diferença. Trabalhar com eles foi uma experiência transformadora e um grande passo para o futuro da nossa empresa."
+          </p>
+        </div>
+      </div>
+      <div class="tab-content" id="client2">
+        <div class="neon-card">
+          <h3>Amilton JR - HeadHunter</h3>
+          <p>
+            "Encontrar uma empresa que realmente entende as necessidades do meu negócio foi um grande desafio, até conhecer a Tech Geenie. Desde o primeiro contato, ficou claro que estávamos lidando com profissionais altamente qualificados e comprometidos em entregar o melhor resultado. 
+          </p>
+          <p>
+            Com soluções personalizadas e um suporte técnico impecável, conseguimos elevar nossa presença digital, aprimorar a experiência dos nossos clientes e garantir um ambiente seguro para nossos usuários. Hoje, confiamos totalmente na Tech Geenie para manter nossos sistemas sempre estáveis e protegidos."
+          </p>
+        </div>
+      </div>
+      <div class="tab-content" id="client3">
+        <div class="neon-card">
+          <h3>DoubleTec</h3>
+          <p>
+            "A Tech Geenie se destacou não apenas pela excelência técnica, mas também pela abordagem inovadora e pelo compromisso com os resultados. Nossa empresa precisava de uma infraestrutura robusta e segura para lidar com um grande volume de dados, e eles entregaram exatamente o que prometiam. 
+          </p>
+          <p>
+            Com a implementação das suas soluções, conseguimos escalar nossos serviços com eficiência, garantindo um sistema rápido, confiável e preparado para os desafios do futuro. A parceria com a Tech Geenie nos trouxe uma vantagem competitiva significativa no mercado."
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Right Side Menu (Bigger images) -->
+    <nav class="tabs-menu">
+      <button class="tab-button active" data-tab="client1">
+        <img src="assets/threecom.png" alt="Threecom" />
+      </button>
+      <button class="tab-button" data-tab="client2">
+        <img src="assets/amilton.jfif" alt="Amilton JR - HeadHunter" />
+      </button>
+      <button class="tab-button" data-tab="client3">
+        <img src="assets/doubletec.jfif" alt="DoubleTec" />
+      </button>
+    </nav>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
       <h2>📞 Fale Conosco</h2>
       <form id="contact-form">
         <input type="text" placeholder="Seu Nome" required />
@@ -63,12 +306,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="fade-in">
+    <footer>
       <p>&copy; 2025 Tech Geenie. Todos os direitos reservados.</p>
     </footer>
-
   </main>
 
-  <script src="main.js" type="module"></script>
+  <!-- Load Three.js from a CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Main JavaScript -->
+  <script src="main.js"></script>
 </body>
+
 </html>

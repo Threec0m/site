@@ -237,10 +237,14 @@ nav ul li a:active {
 
 /* --- Services Section (Carousel) --- */
 #services {
-  padding: 130px 20px 0 20px;
+  padding: 100px 20px 0 20px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
+}
+
+#services h1{
+  font-size: 2em;
 }
 .carousel-wrapper {
   position: relative;
@@ -332,7 +336,7 @@ nav ul li a:active {
 
 /* --- Contact Section Styles --- */
 #contact {
-  padding: 120px 20px;
+  padding: 0 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -490,12 +494,13 @@ body.light-mode .nav-menu {
 
 /* --- Quem Somos Tabs & Neon Card Styles --- */
 #quem-somos {
-  padding: 70px 20px;
+  padding: 0 20px;
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;
 }
-#quem-somos h2 {
+#quem-somos h1 {
+  font-size: 2em;
   text-align: center;
 }
 .tabs-container {
@@ -578,7 +583,8 @@ body.light-mode .nav-menu {
   margin: 0 auto;
   text-align: left;
 }
-#nossos-clientes h2 {
+#nossos-clientes h1 {
+  font-size: 2em;
   text-align: center;
 }
 #nossos-clientes .tabs-container {
@@ -666,7 +672,7 @@ body.light-mode .nav-menu {
 
   /* Mobile Services Section Overrides */
   #services {
-    padding: 130px 10px 0 10px;
+    padding: 0px 10px;
   }
   .carousel-wrapper,
   .carousel-container {

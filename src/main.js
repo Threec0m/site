@@ -62,13 +62,13 @@ switchInput.addEventListener("change", () => {
     scene.background = new THREE.Color(0x000000);
     plane.material.color.set(0x00ffff);
     pointLight.color.set(0x00ffff);
-    logoImg.src = "./assets/text-branco-sfund.png";
+    logoImg.src = "assets/Logo Threecom.png";
   } else {
     document.body.classList.add("light-mode");
     scene.background = new THREE.Color(0xffffff);
     plane.material.color.set(0x0061fc);
     pointLight.color.set(0x0061fc);
-    logoImg.src = "./assets/text-preto-sfund.png";
+    logoImg.src = "assets/Logo Threecom.png";
   }
 });
 
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const serviceName = titleElement
           ? titleElement.innerText.trim()
           : "Serviço";
-        modalMessage.textContent = `Quer fazer um orçamento de ${serviceName}?`;
+        modalMessage.textContent = `Quer saber mais sobre ${serviceName}?`;
         modal.setAttribute("data-service", serviceName);
         modal.style.display = "block";
       });
@@ -181,7 +181,7 @@ document.getElementById("contact-form").addEventListener("submit", (event) => {
     alert("Por favor, preencha todos os campos antes de enviar.");
     return;
   }
-  const phoneNumber = "5515991569195";
+  const phoneNumber = "5515998531707";
   const text = `Olá, meu nome é *${name}*.\nMeu e-mail: *${email}*\n\nMensagem:\n${message}`;
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     text

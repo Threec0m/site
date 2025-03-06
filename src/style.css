@@ -25,12 +25,14 @@ input {
   color: var(--fg);
   font: 1em/1.5 sans-serif;
 }
+
 body {
   background-color: var(--bg);
   display: block;
   height: auto;
   transition: background-color var(--trans-dur), color var(--trans-dur);
 }
+
 .switch {
   position: fixed;
   top: 40px;
@@ -38,10 +40,12 @@ body {
   z-index: 100;
   cursor: pointer;
 }
+
 .switch__icon,
 .switch__input {
   display: block;
 }
+
 .switch__icon {
   position: absolute;
   top: 0.375em;
@@ -50,19 +54,23 @@ body {
   height: 0.75em;
   transition: opacity calc(var(--trans-dur) / 2), transform calc(var(--trans-dur) / 2);
 }
+
 .switch__icon polyline {
   transition: stroke-dashoffset calc(var(--trans-dur) / 2);
 }
+
 .switch__icon--light,
 .switch__icon--light polyline {
   transition-delay: calc(var(--trans-dur) / 2);
   transition-timing-function: var(--trans-timing-out);
 }
+
 .switch__icon--dark {
   opacity: 0;
   transform: translateX(-0.75em) rotate(30deg) scale(0.75);
   transition-timing-function: var(--trans-timing-in);
 }
+
 .switch__input {
   background-color: hsl(210, 90%, 70%);
   border-radius: 0.75em;
@@ -78,16 +86,19 @@ body {
   transition: background-color var(--trans-dur) var(--trans-timing),
     box-shadow 0.15s linear;
 }
+
 .switch__input:focus-visible {
   box-shadow: 0 0 0 0.125em hsl(var(--hue), 90%, 50%),
     0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
 }
+
 .switch__input:before,
 .switch__input:after {
   content: "";
   display: block;
   position: absolute;
 }
+
 .switch__input:before {
   background-color: hsl(50, 90%, 50%);
   border-radius: inherit;
@@ -96,6 +107,7 @@ body {
   inset: 0;
   transition: background-color var(--trans-dur) var(--trans-timing);
 }
+
 .switch__input:after {
   background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
@@ -108,34 +120,42 @@ body {
     transform var(--trans-dur) var(--trans-timing);
   z-index: 1;
 }
+
 .switch__input:checked {
   background-color: hsl(290, 90%, 40%);
 }
+
 .switch__input:checked:before {
   background-color: hsl(220, 90%, 40%);
 }
+
 .switch__input:checked:after {
   background-color: hsl(0, 0%, 0%);
   transform: translateX(1.5em);
 }
-.switch__input:checked ~ .switch__icon--light,
-.switch__input:checked ~ .switch__icon--light polyline {
+
+.switch__input:checked~.switch__icon--light,
+.switch__input:checked~.switch__icon--light polyline {
   transition-delay: 0s;
   transition-timing-function: var(--trans-timing-in);
 }
-.switch__input:checked ~ .switch__icon--light {
+
+.switch__input:checked~.switch__icon--light {
   opacity: 0;
   transform: translateX(-0.75em) rotate(-30deg) scale(0.75);
 }
-.switch__input:checked ~ .switch__icon--light polyline {
+
+.switch__input:checked~.switch__icon--light polyline {
   stroke-dashoffset: 1.5;
 }
-.switch__input:checked ~ .switch__icon--dark {
+
+.switch__input:checked~.switch__icon--dark {
   opacity: 1;
   transform: translateX(-1.5em);
   transition-delay: calc(var(--trans-dur) / 2);
   transition-timing-function: var(--trans-timing-out);
 }
+
 .switch__sr {
   overflow: hidden;
   position: absolute;
@@ -194,21 +214,26 @@ section {
   height: 100px;
   z-index: 1000;
 }
+
 .logo {
   margin-right: 30px;
 }
+
 .logo img {
   height: 130px;
 }
+
 nav ul {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
+
 nav ul li {
   margin: 0 15px;
 }
+
 nav ul li a {
   text-decoration: none;
   color: #fff;
@@ -217,6 +242,7 @@ nav ul li a {
   font-size: 1.2em;
   -webkit-tap-highlight-color: transparent;
 }
+
 nav ul li a:hover {
   color: #00ffff;
 }
@@ -231,8 +257,10 @@ nav ul li a:active {
 .menu-toggle {
   display: none;
 }
+
 .nav-menu {
-  display: block; /* Default for desktop */
+  display: block;
+  /* Default for desktop */
 }
 
 /* --- Services Section (Carousel) --- */
@@ -243,14 +271,16 @@ nav ul li a:active {
   text-align: center;
 }
 
-#services h1{
+#services h1 {
   font-size: 2em;
 }
+
 .carousel-wrapper {
   position: relative;
   max-width: 1240px;
   margin: 40px auto;
 }
+
 .carousel-container {
   width: 100%;
   margin: 0 auto;
@@ -259,28 +289,34 @@ nav ul li a:active {
   scrollbar-width: auto;
   scrollbar-color: #00ffff transparent;
 }
+
 .carousel-container::-webkit-scrollbar-button,
 .carousel-container::-webkit-scrollbar-corner {
   display: none;
 }
+
 .carousel-container::-webkit-scrollbar {
   height: 20px;
 }
+
 #services:hover .carousel-container::-webkit-scrollbar-track {
   background: transparent;
   margin: 2px;
 }
+
 #services:hover .carousel-container::-webkit-scrollbar-thumb {
   background: #00ffff;
   border: 2px solid transparent;
   border-radius: 6px;
   box-shadow: inset 0 0 0 2px #00ffff, 0 0 10px #00ffff;
 }
+
 .carousel {
   display: flex;
   transition: transform 0.5s ease;
   -webkit-overflow-scrolling: touch;
 }
+
 .carousel-item {
   position: relative;
   flex: 0 0 auto;
@@ -290,6 +326,7 @@ nav ul li a:active {
   border-radius: 10px;
   overflow: hidden;
 }
+
 .carousel-item img {
   width: 100%;
   height: 100%;
@@ -297,6 +334,7 @@ nav ul li a:active {
   display: block;
   border-radius: 10px;
 }
+
 .service-title {
   position: absolute;
   bottom: 10px;
@@ -308,9 +346,11 @@ nav ul li a:active {
   z-index: 5;
   transition: opacity 0.6s ease;
 }
+
 .carousel-item:hover .service-title {
   opacity: 0;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -330,6 +370,7 @@ nav ul li a:active {
   z-index: 6;
   border-radius: 10px;
 }
+
 .carousel-item:hover .overlay {
   opacity: 1;
 }
@@ -340,38 +381,46 @@ nav ul li a:active {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .contact-container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
 }
+
 .contact-info {
   flex: 1;
   min-width: 300px;
 }
+
 .contact-info h2 {
   margin-bottom: 20px;
   text-align: left;
 }
+
 .contact-info p {
   margin-bottom: 20px;
   line-height: 1.6;
 }
+
 .contact-info ul {
   list-style: none;
   margin-bottom: 20px;
   padding-left: 0;
 }
+
 .contact-info ul li {
   margin-bottom: 10px;
   font-size: 1em;
 }
+
 #contact form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 #contact input,
 #contact textarea {
   padding: 10px;
@@ -380,6 +429,7 @@ nav ul li a:active {
   font-size: 1em;
   width: 100%;
 }
+
 #contact button {
   padding: 15px;
   border: none;
@@ -390,9 +440,11 @@ nav ul li a:active {
   cursor: pointer;
   transition: background 0.3s;
 }
+
 #contact button:hover {
   background: #008080;
 }
+
 .contact-map {
   flex: 1;
   min-width: 300px;
@@ -415,26 +467,33 @@ body.light-mode {
   background-color: #fff;
   color: #000;
 }
+
 body.light-mode .site-header {
   background: rgba(255, 255, 255, 0.9);
 }
+
 body.light-mode nav ul li a {
   color: #000;
 }
+
 body.light-mode nav ul li a:hover {
   color: #00aaff;
 }
+
 body.light-mode #theme-toggle {
   background: #000;
   color: #fff;
 }
+
 body.light-mode #contact button {
   background: #000;
   color: #fff;
 }
+
 body.light-mode footer {
   background: rgba(255, 255, 255, 0.9);
 }
+
 body.light-mode .nav-menu {
   background: rgba(255, 255, 255, 0.9);
 }
@@ -451,6 +510,7 @@ body.light-mode .nav-menu {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .modal-content {
   background-color: #222;
   margin: 15% auto;
@@ -463,6 +523,7 @@ body.light-mode .nav-menu {
   text-align: center;
   position: relative;
 }
+
 .close {
   color: #aaa;
   position: absolute;
@@ -472,10 +533,12 @@ body.light-mode .nav-menu {
   font-weight: bold;
   cursor: pointer;
 }
+
 .close:hover,
 .close:focus {
   color: #fff;
 }
+
 .modal-content button {
   margin: 15px 35px;
   padding: 12px 24px;
@@ -488,6 +551,7 @@ body.light-mode .nav-menu {
   cursor: pointer;
   transition: background 0.3s;
 }
+
 .modal-content button:hover {
   background: #008080;
 }
@@ -499,20 +563,24 @@ body.light-mode .nav-menu {
   margin: 0 auto;
   text-align: left;
 }
+
 #quem-somos h1 {
   font-size: 2em;
   text-align: center;
 }
+
 .tabs-container {
   display: flex;
   gap: 30px;
   margin-top: 20px;
 }
+
 .tabs-menu {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .tab-button {
   background: transparent;
   border: none;
@@ -521,6 +589,7 @@ body.light-mode .nav-menu {
   transition: transform 0.3s ease;
   position: relative;
 }
+
 /* Dot on the left for desktop by default */
 .tab-button::after {
   content: "";
@@ -533,9 +602,11 @@ body.light-mode .nav-menu {
   background-color: #00ffff;
   border-radius: 50%;
 }
+
 .tab-button.active::after {
   display: none;
 }
+
 .tab-button img {
   width: 100px;
   height: 100px;
@@ -544,24 +615,29 @@ body.light-mode .nav-menu {
   transition: all 0.3s ease;
   object-fit: cover;
 }
+
 .tab-button.active img {
   width: 150px;
   height: 150px;
   border: 2px solid #00ffff;
   transform: scale(1.1);
 }
+
 .tabs-content {
   flex: 1;
   max-height: 500px;
   overflow-y: auto;
 }
+
 .tab-content {
   display: none;
   animation: fadeIn 0.5s ease;
 }
+
 .tab-content.active {
   display: block;
 }
+
 .neon-card {
   padding: 20px;
   border: 1px solid #00ffff;
@@ -571,9 +647,15 @@ body.light-mode .nav-menu {
   color: #fff;
   position: relative;
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* --- Nossos Clientes Tabs & Testemunhos Styles --- */
@@ -583,10 +665,12 @@ body.light-mode .nav-menu {
   margin: 0 auto;
   text-align: left;
 }
+
 #nossos-clientes h1 {
   font-size: 2em;
   text-align: center;
 }
+
 #nossos-clientes .tabs-container {
   display: flex;
   gap: 30px;
@@ -595,16 +679,19 @@ body.light-mode .nav-menu {
   justify-content: space-between;
   align-items: center;
 }
+
 #nossos-clientes .tabs-content {
   flex: 1;
   max-height: 500px;
   overflow-y: auto;
 }
+
 #nossos-clientes .tabs-menu {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 /* For Nossos Clientes on desktop, reposition the dot to the right */
 #nossos-clientes .tab-button::after {
   left: auto;
@@ -613,11 +700,12 @@ body.light-mode .nav-menu {
 
 /* --- Responsive Styles for Mobile (max-width: 768px) --- */
 @media (max-width: 768px) {
+
   /* Reduce section top margin */
   section {
     scroll-margin-top: 20px;
   }
-  
+
   /* Header & Navigation Adjustments */
   .site-header {
     flex-direction: column;
@@ -626,12 +714,15 @@ body.light-mode .nav-menu {
     justify-content: center;
     position: relative;
   }
+
   .logo {
     margin-right: 0;
   }
+
   .logo img {
     height: 60px;
   }
+
   .menu-toggle {
     display: block;
     background: none;
@@ -644,6 +735,7 @@ body.light-mode .nav-menu {
     left: 20px;
     z-index: 1100;
   }
+
   .nav-menu {
     display: none;
     background: rgba(0, 0, 0, 0.9);
@@ -653,18 +745,22 @@ body.light-mode .nav-menu {
     width: 100%;
     z-index: 1050;
   }
+
   .nav-menu.active {
     display: block;
   }
+
   .nav-menu ul {
     list-style: none;
     padding: 10px 0;
     margin: 0;
     text-align: center;
   }
+
   .nav-menu ul li {
     margin: 10px 0;
   }
+
   .nav-menu ul li a {
     padding: 10px 15px;
     font-size: 0.9em;
@@ -674,15 +770,20 @@ body.light-mode .nav-menu {
   #services {
     padding: 0px 10px;
   }
+
   .carousel-wrapper,
   .carousel-container {
     margin: 20px auto;
   }
+
   .carousel-item {
-    width: 250px; /* Reduced width for phones */
-    height: 400px; /* Reduced height for phones */
+    width: 250px;
+    /* Reduced width for phones */
+    height: 400px;
+    /* Reduced height for phones */
     margin-right: 10px;
   }
+
   .service-title {
     font-size: 1.1em;
   }
@@ -692,20 +793,24 @@ body.light-mode .nav-menu {
     padding: 70px 10px;
     text-align: center;
   }
+
   /* Stack tabs-menu and tabs-content vertically */
   #quem-somos .tabs-container {
     flex-direction: column;
     gap: 20px;
   }
+
   /* Display images in tabs-menu horizontally and remove the desktop dot */
   #quem-somos .tabs-menu {
     flex-direction: row;
     justify-content: center;
     gap: 10px;
   }
+
   #quem-somos .tab-button::after {
     display: none;
   }
+
   /* Limit text area height and enable vertical scroll if needed */
   #quem-somos .tabs-content {
     max-height: 300px;
@@ -717,22 +822,26 @@ body.light-mode .nav-menu {
     padding: 70px 10px;
     text-align: center;
   }
+
   /* Change order so images (tabs-menu) appear on top */
   #nossos-clientes .tabs-container {
     flex-direction: column;
     gap: 20px;
   }
+
   #nossos-clientes .tabs-menu {
     order: -1;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
   }
+
   #nossos-clientes .tabs-content {
     order: 1;
     max-height: 300px;
     overflow-y: auto;
   }
+
   /* Remove the dot indicator for Nossos Clientes on mobile */
   #nossos-clientes .tab-button::after {
     content: none;
@@ -742,17 +851,45 @@ body.light-mode .nav-menu {
 
 /* --- Additional Mobile Adjustments (max-width: 480px) --- */
 @media (max-width: 480px) {
+  .click {
+    font-size: 0.9rem;
+    /* Slightly smaller font size */
+    margin: 0.5em auto;
+    /* Center the button with some vertical spacing */
+    display: inline-block;
+    height: 40px;
+    /* Ensures proper box model behavior */
+  }
+
   body {
     font-size: 14px;
   }
+
   .modal-content {
     width: 90%;
     margin: 30% auto;
     padding: 15px;
   }
+
   .modal-content button {
     margin: 10px 15px;
     padding: 10px 18px;
     font-size: 1em;
   }
+}
+
+.click {
+  margin-top: 5%;
+  font-weight: bold;
+  background-color: #00aaff;
+  border-radius: 50px;
+  color: white;
+  padding: 5px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

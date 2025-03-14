@@ -208,25 +208,23 @@ section {
   align-items: center;
   padding: 0 30px;
   background: rgba(0, 0, 0, 0.7);
-  position: fixed;
   top: 0;
   width: 100%;
-  height: 100px;
+  min-height: 140px; /* Changed from fixed height to min-height */
   z-index: 1000;
 }
 
-.logo {
-  grid-column: 1;
-}
-
+/* Center the navigation menu by removing it from the grid flow */
 .nav-menu {
-  grid-column: 2;
-  justify-self: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+/* Menu Toggle Button */
 .menu-toggle {
-  grid-column: 3;
-  justify-self: end;
+  position: relative;
+  z-index: 1010;
 }
 
 ul {
@@ -243,7 +241,7 @@ li {
 }
 
 .logo img {
-  height: 100px;
+  height: 140px;
 }
 
 nav ul {
@@ -254,7 +252,7 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 14px;
 }
 
 nav ul li a {
@@ -286,7 +284,7 @@ nav ul li a:active {
 
 /* ===================== PLANOS SECTION (Carousel) ===================== */
 #planos {
-  padding: 100px 20px 0 20px;
+  padding: 20px 20px 0 20px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -398,7 +396,7 @@ nav ul li a:active {
 
 /* ===================== SERVIÇOS SECTION (Cards) ===================== */
 #servicos {
-  padding: 100px 20px 0 20px;
+  padding: 20px 20px 0 20px;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
@@ -426,7 +424,7 @@ nav ul li a:active {
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid #00aaff;
   border-radius: 10px;
-  width: 300px;
+  width: 310px;
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff;
@@ -641,7 +639,7 @@ body.light-mode .nav-menu {
 
 /* ===================== QUEM SOMOS TABS & NEON CARD STYLES ===================== */
 #quem-somos {
-  padding: 70px 20px;
+  padding: 70px 20px 0;
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;

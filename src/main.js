@@ -62,13 +62,13 @@ switchInput.addEventListener("change", () => {
     scene.background = new THREE.Color(0x000000);
     plane.material.color.set(0x00ffff);
     pointLight.color.set(0x00ffff);
-    logoImg.src = "assets/Logo Threecom.png";
+    logoImg.src = "assets/trica.png";
   } else {
     document.body.classList.add("light-mode");
     scene.background = new THREE.Color(0xffffff);
     plane.material.color.set(0x0061fc);
     pointLight.color.set(0x0061fc);
-    logoImg.src = "assets/Logo Threecom.png";
+    logoImg.src = "assets/trica.png";
   }
 });
 
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modalYes.addEventListener("click", () => {
       const serviceName = modal.getAttribute("data-service") || "Serviço";
-      const phoneNumber = "5515991569195"; // Replace with your WhatsApp number
+      const phoneNumber = "5515998531707";
       const text = `Olá! Gostaria de um orçamento para um serviço de ${serviceName}.`;
       const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
       window.open(whatsappURL, "_blank");

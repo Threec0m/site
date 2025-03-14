@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="assets/Logo Threecom.png">
+  <link rel="icon" type="image/x-icon" href="assets/threecom.png">
   <title>Threecom Tecnologia</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -29,8 +30,7 @@
     </svg>
     <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
       <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
-        <path
-          d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z" />
+        <path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z" />
       </g>
     </svg>
     <span class="switch__sr">Dark Mode</span>
@@ -46,113 +46,94 @@
       <div class="logo">
         <img src="assets/Logo Threecom.png" alt="Threecom Logo" />
       </div>
-      <!-- Hamburger button -->
-      <button class="menu-toggle" id="menuToggle">☰</button>
       <!-- Navigation menu -->
       <nav class="nav-menu" id="navMenu">
         <ul>
-          <li><a href="#services">Serviços</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#planos">Planos</a></li>
           <li><a href="#quem-somos">Quem Somos</a></li>
           <li><a href="#nossos-clientes">Nossos Parceiros</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
+      <!-- Hamburger button (for mobile) -->
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </header>
 
-
-    <!-- Services Section (Carousel) -->
-    <section id="services">
+    <!-- Planos Section (Carousel) -->
+    <section id="planos">
       <h1>💻 Nossos Planos</h1>
-      <div class="carousel-wrapper">
-        <div class="carousel-container">
-          <div class="carousel">
-            <div class="carousel-item">
-              <img
-                src="https://images.pexels.com/photos/3184613/pexels-photo-3184613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Service 1" />
-              <div class="service-title">Plano Bronze</div>
-              <div class="overlay">
+      <div class="planos-carousel-wrapper">
+        <div class="planos-carousel-container">
+          <div class="planos-carousel">
+            <!-- Plano Bronze -->
+            <div class="planos-carousel-item">
+              <img src="https://images.pexels.com/photos/3184613/pexels-photo-3184613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Plano Bronze" />
+              <div class="plano-title">Plano Bronze</div>
+              <div class="plano-overlay">
                 <h3>Plano Bronze - Até 10 Usuários</h3>
-                <p>
-                  Gestão de Ti para sua Empresa
-
-                  Formatação sem/com backup
-
-                  Monitoramento de Hardware
-
-                  Gerenciamento de E-mails
-
-                  Manutenção de Servidores
-
-                  Suporte Remoto ILIMITADO
-
-                  Suporte Presencial Limitado
-
-                  E Mais...
-                </p>
+                <ul>
+                  <li>Gestão de TI para sua Empresa</li>
+                  <li>Formatação sem/com backup</li>
+                  <li>Monitoramento de Hardware</li>
+                  <li>Gerenciamento de E-mails</li>
+                  <li>Manutenção de Servidores</li>
+                  <li>Suporte Remoto ILIMITADO</li>
+                  <li>Suporte Presencial Limitado</li>
+                </ul>
+                <button class="linktreebtn">Clique Aqui</button>
               </div>
             </div>
-            <div class="carousel-item">
-              <img
-                src="https://images.pexels.com/photos/3182750/pexels-photo-3182750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Service 2" />
-              <div class="service-title">Plano Prata</div>
-              <div class="overlay">
-                <h3>Plano Prata - até 20 Usuários</h3>
-                <p>
-                  Plano Bronze +
-
-                  Hospedagem de E-mails
-
-                  100GB de Backup em Nuvem
-
-                  Criação de Prevenção de Desastres
-
-                  Manutenção Preventiva Nivel I
-
-                  Treinamento em informatica Nivel I
-
-                  E Mais...
-                </p>
+            <!-- Plano Prata -->
+            <div class="planos-carousel-item">
+              <img src="https://images.pexels.com/photos/3182750/pexels-photo-3182750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Plano Prata" />
+              <div class="plano-title">Plano Prata</div>
+              <div class="plano-overlay">
+                <h3>Plano Prata - Até 20 Usuários</h3>
+                <ul>
+                  <li>Plano Bronze +</li>
+                  <li>Hospedagem de E-mails</li>
+                  <li>100GB de Backup em Nuvem</li>
+                  <li>Prevenção de Desastres</li>
+                  <li>Manutenção Preventiva Nível I</li>
+                  <li>Treinamento em Informática Nível I</li>
+                </ul>
+                <button class="linktreebtn">Clique Aqui</button>
               </div>
             </div>
-            <div class="carousel-item">
-              <img
-                src="https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Service 3" />
-              <div class="service-title">Plano Ouro</div>
-              <div class="overlay">
-                <h3>Plano Ouro - 25+ Usuários com Personalizado</h3>
-                <p>
-                  Plano Bronze +
-
-                  Plano Prata +
-
-                  500GB de Backup em Nuvem
-
-                  Manutenção Preventiva Nivel II
-
-                  Manutenção de Nobreaks
-
-                  Manutenção de Impressoras
-
-                  Manutenção de Monitores
-
-                  Treinamento Informatica Nivel II
-
-                  E Mais...
-                </p>
+            <!-- Plano Ouro -->
+            <div class="planos-carousel-item">
+              <img src="https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Plano Ouro" />
+              <div class="plano-title">Plano Ouro</div>
+              <div class="plano-overlay">
+                <h3>Plano Ouro - 25+ Usuários Personalizado</h3>
+                <ul>
+                  <li>Plano Bronze +</li>
+                  <li>Plano Prata +</li>
+                  <li>500GB de Backup em Nuvem</li>
+                  <li>Manutenção Preventiva Nível II</li>
+                  <li>Manutenção de Nobreaks</li>
+                  <li>Manutenção de Impressoras</li>
+                  <li>Treinamento Nível II</li>
+                </ul>
+                <button class="linktreebtn">Clique Aqui</button>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="assets/websites.jpg" alt="Service 4" />
-              <div class="service-title">Software Pesonalizado</div>
-              <div class="overlay">
+            <!-- Software Personalizado -->
+            <div class="planos-carousel-item">
+              <img src="assets/websites.jpg" alt="Software Personalizado" />
+              <div class="plano-title">Software Personalizado</div>
+              <div class="plano-overlay">
                 <h3>Software Personalizado</h3>
-                <p>
-                  Desenvolvimento de software personalizado e soluções tecnológicas, ajudando empresas a otimizar
-                  processos, aumentar a eficiência e impulsionar resultados com sistemas sob medida e de alta qualidade.
-                </p>
+                <ul>
+                  <li>Desenvolvimento de software personalizado</li>
+                  <li>Soluções tecnológicas sob medida</li>
+                  <li>Otimização de processos empresariais</li>
+                  <li>Aumento de eficiência operacional</li>
+                  <li>Sistemas de alta qualidade</li>
+                </ul>
+                <p>E Mais...</p>
+                <button class="linktreebtn">Clique Aqui</button>
               </div>
             </div>
           </div>
@@ -160,7 +141,60 @@
       </div>
     </section>
 
-    <!-- Quem Somos Section (Upgraded with Tabs) -->
+    <!-- Serviços Section (Cards) -->
+    <section id="servicos">
+      <h1>🔧 Nossos Serviços</h1>
+      <div class="servicos-cards-container">
+        <!-- First Row: 3 cards -->
+        <div class="servicos-cards-row">
+          <!-- Card 1: Infra -->
+          <div class="servico-card">
+            <img src="assets/Telefonia.jpg" alt="Infra" />
+            <div class="servico-info">
+              <h3>Infra</h3>
+              <p>Infraestrutura de redes é o trabalho de planejar, implementar e gerenciar os recursos e dispositivos necessários para garantir a comunicação e o funcionamento eficiente de uma rede de computadores.</p>
+            </div>
+          </div>
+          <!-- Card 2: Suporte -->
+          <div class="servico-card">
+            <img src="assets/Suporte de Ti.jpg" alt="Suporte" />
+            <div class="servico-info">
+              <h3>Suporte</h3>
+              <p>Continuidade, segurança, confiabilidade e soluções em TI para seus processos no dia a dia!</p>
+            </div>
+          </div>
+          <!-- Card 3: Servidores -->
+          <div class="servico-card">
+            <img src="assets/Servidores.jpg" alt="Servidores" />
+            <div class="servico-info">
+              <h3>Servidores</h3>
+              <p>Suporte de servidores, garantindo performance, estabilidade e disponibilidade para seu uso diário!</p>
+            </div>
+          </div>
+        </div>
+        <!-- Second Row: 2 cards (centered) -->
+        <div class="servicos-cards-row">
+          <!-- Card 4: Montagem de Computadores -->
+          <div class="servico-card">
+            <img src="assets/Montagem de computadores.jpg" alt="Montagem de Computadores" />
+            <div class="servico-info">
+              <h3>Montagem de Computadores</h3>
+              <p>Monte seu computador da melhor forma possível! Fazemos o processo de montagem e manutenção de computadores gamers e não-gamers também.</p>
+            </div>
+          </div>
+          <!-- Card 5: Sistemas -->
+          <div class="servico-card">
+            <img src="assets/Telefonia.jpg" alt="Sistemas" />
+            <div class="servico-info">
+              <h3>Sistemas</h3>
+              <p>Atuamos na montagem, implementação e manutenção de sistemas, como ERPs e outras soluções empresariais, garantindo sua eficiência, segurança e funcionamento contínuo. Oferecemos suporte para otimizar processos e manter a estabilidade dos sistemas no seu dia a dia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quem Somos Section (Tabs) -->
     <section id="quem-somos">
       <h1>🌎 Quem Somos</h1>
       <div class="tabs-container">
@@ -172,10 +206,9 @@
               <button class="click">Clique na imagem!</button>
             </button>
           </div>
-
           <div class="button-container">
             <button class="tab-button" data-tab="achievements">
-              <img src="assets/conquista.png" alt="Nossas Conquistas" />
+              <img src="assets/conquista.jpg" alt="Nossas Conquistas" />
               <button class="click">Clique na imagem!</button>
             </button>
           </div>
@@ -192,27 +225,13 @@
             <div class="neon-card">
               <h3>Sobre a Threecom</h3>
               <p>
-                Bem-vindo ao nosso universo tecnológico, onde inovação, suporte e excelência convergem para moldar uma
-                experiência excepcional!
-
-                Vivemos em uma era de transformação digital acelerada, onde a tecnologia é mais do que uma ferramenta —
-                é o alicerce do sucesso empresarial, da eficiência operacional e do avanço pessoal. Entendemos que, para
-                acompanhar esse ritmo, é essencial contar com soluções tecnológicas ágeis, inteligentes e sob medida
-                para cada desafio.
-
-                Seja você um profissional de TI em busca de estratégias inovadoras, um empreendedor que deseja otimizar
-                seus processos ou um usuário final que precisa de suporte confiável, estamos aqui para tornar sua
-                jornada mais fluida, intuitiva e produtiva.
-
-                Nosso compromisso é oferecer mais do que apenas suporte técnico. Nossa missão é proporcionar um
-                ecossistema de soluções personalizadas, que não apenas resolvam problemas, mas que impulsionem
-                oportunidades. Investimos constantemente em pesquisa, desenvolvimento e aprimoramento para garantir que
-                cada serviço e produto entregue o máximo de desempenho, segurança e inovação.
-
-                Navegue pelo nosso site e descubra um mundo de possibilidades, com soluções projetadas para transformar
-                desafios em conquistas e potencializar sua experiência tecnológica. Juntos, vamos moldar o futuro
-                digital!</p>
-
+                Bem-vindo ao nosso universo tecnológico, onde inovação, suporte e excelência convergem para moldar uma experiência excepcional!
+                Vivemos em uma era de transformação digital acelerada, onde a tecnologia é mais do que uma ferramenta — é o alicerce do sucesso empresarial, da eficiência operacional e do avanço pessoal.
+                Entendemos que, para acompanhar esse ritmo, é essencial contar com soluções tecnológicas ágeis, inteligentes e sob medida para cada desafio.
+                Seja você um profissional de TI em busca de estratégias inovadoras, um empreendedor que deseja otimizar seus processos ou um usuário final que precisa de suporte confiável, estamos aqui para tornar sua jornada mais fluida, intuitiva e produtiva.
+                Nosso compromisso é oferecer mais do que apenas suporte técnico. Nossa missão é proporcionar um ecossistema de soluções personalizadas, que não apenas resolvam problemas, mas que impulsionem oportunidades.
+                Navegue pelo nosso site e descubra um mundo de possibilidades, com soluções projetadas para transformar desafios em conquistas e potencializar sua experiência tecnológica.
+              </p>
             </div>
           </div>
           <div class="tab-content" id="achievements">
@@ -220,21 +239,15 @@
               <h3>Nossas Conquistas</h3>
               <b>99% De Aprovação</b>
               <p>
-                Taxa de aprovação de 99% (2023). Temos uma abordagem centrada em nossos clientes, inovando
-                constantemente e comprometidos com a excelência em todos os aspectos de nossas soluções. Essa conquista
-                é um testemunho do sucesso duradouro da empresa e da confiança sólida que conquistou entre seus
-                clientes.</p>
+                Taxa de aprovação de 99% (2023). Temos uma abordagem centrada em nossos clientes, inovando constantemente e comprometidos com a excelência em todos os aspectos de nossas soluções. Essa conquista é um testemunho do sucesso duradouro da empresa e da confiança sólida que conquistou entre seus clientes.
+              </p>
               <b>Google 5 Estrelas</b>
               <p>
-                Nosso sucesso com nossos clientes é por meio de soluções tecnológicas inovadoras e serviços
-                excepcionais. Estamos orgulhosamente classificados com 5 estrelas no Google, um testemunho da dedicação
-                contínua à excelência em todos os aspectos dos nossos serviços de suporte em TI
+                Nosso sucesso com nossos clientes é por meio de soluções tecnológicas inovadoras e serviços excepcionais. Estamos orgulhosamente classificados com 5 estrelas no Google, um testemunho da dedicação contínua à excelência em todos os aspectos dos nossos serviços de suporte em TI.
               </p>
               <b>Parceiros e Partners</b>
               <p>
-                Parceiros confiáveis e reconhecidos no mercado compartilham objetivos comuns e valores, o que cria uma
-                base sólida para o trabalho conjunto. Além disso, a confiança permite a abertura na comunicação,
-                facilitando a resolução de desafios e a adaptação às mudanças nas circunstâncias.
+                Parceiros confiáveis e reconhecidos no mercado compartilham objetivos comuns e valores, o que cria uma base sólida para o trabalho conjunto. A confiança permite a abertura na comunicação, facilitando a resolução de desafios e a adaptação às mudanças nas circunstâncias.
               </p>
             </div>
           </div>
@@ -242,29 +255,16 @@
             <div class="neon-card">
               <h3>Nossa Missão</h3>
               <p>
-                Nossa missão é transformar a experiência tecnológica por meio da inovação, excelência e suporte
-                excepcional, capacitando empresas e indivíduos a alcançarem todo o seu potencial no mundo digital.
-                Acreditamos que a tecnologia deve ser um facilitador, não um obstáculo, e por isso nos dedicamos a
-                desenvolver soluções inteligentes, personalizadas e de alto desempenho, que otimizam processos,
-                impulsionam a produtividade e elevam a competitividade no mercado.
-
-                Nosso compromisso vai além de oferecer suporte técnico: buscamos criar um ecossistema de inovação
-                contínua, onde cada solução é projetada para atender às necessidades específicas de nossos clientes,
-                garantindo eficiência, segurança e confiabilidade. Através de um atendimento humanizado e uma abordagem
-                estratégica, trabalhamos para simplificar desafios tecnológicos e transformar problemas em oportunidades
-                de crescimento.
-
-                Estamos em constante evolução, investindo em pesquisa, desenvolvimento e aprimoramento para entregar
-                produtos e serviços que acompanham o ritmo das mudanças digitais e antecipam as demandas do futuro.
-                Nosso propósito é ser o parceiro ideal para aqueles que buscam não apenas soluções tecnológicas, mas uma
-                experiência transformadora, pautada na excelência, na personalização e no compromisso com o sucesso de
-                cada cliente.</p>
+                Nossa missão é transformar a experiência tecnológica por meio da inovação, excelência e suporte excepcional, capacitando empresas e indivíduos a alcançarem todo o seu potencial no mundo digital.
+                Acreditamos que a tecnologia deve ser um facilitador, não um obstáculo, e por isso nos dedicamos a desenvolver soluções inteligentes, personalizadas e de alto desempenho, que otimizam processos, impulsionam a produtividade e elevam a competitividade no mercado.
+                Nosso compromisso vai além de oferecer suporte técnico: buscamos criar um ecossistema de inovação contínua, onde cada solução é projetada para atender às necessidades específicas de nossos clientes, garantindo eficiência, segurança e confiabilidade.
+                Através de um atendimento humanizado e uma abordagem estratégica, trabalhamos para simplificar desafios tecnológicos e transformar problemas em oportunidades de crescimento.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
 
     <!-- Nossos Clientes Section (Testemunhos) -->
     <section id="nossos-clientes">
@@ -275,59 +275,41 @@
           <div class="tab-content active" id="client1">
             <div class="neon-card">
               <h3>Oboticário</h3>
-              A Threecom foi essencial na modernização da nossa infraestrutura digital. Além de otimizar a eficiência e
-              a confiabilidade de nossos sistemas, implementaram soluções robustas que elevaram a segurança e a
-              conectividade da nossa empresa a um novo patamar.
-
-              A equipe demonstrou um profundo conhecimento técnico e uma capacidade excepcional de compreender nossas
-              necessidades específicas, entregando soluções personalizadas que realmente transformaram nossa operação.
-              Trabalhar com a Threecom foi um divisor de águas, permitindo-nos operar com mais estabilidade,
-              escalabilidade e segurança, preparando nossa empresa para os desafios do futuro.
+              A Threecom foi essencial na modernização da nossa infraestrutura digital. Além de otimizar a eficiência e a confiabilidade de nossos sistemas, implementaram soluções robustas que elevaram a segurança e a conectividade da nossa empresa a um novo patamar.
+              A equipe demonstrou um profundo conhecimento técnico e uma capacidade excepcional de compreender nossas necessidades específicas, entregando soluções personalizadas que realmente transformaram nossa operação.
+              Trabalhar com a Threecom foi um divisor de águas, permitindo-nos operar com mais estabilidade, escalabilidade e segurança, preparando nossa empresa para os desafios do futuro.
             </div>
           </div>
           <div class="tab-content" id="client2">
             <div class="neon-card">
               <h3>Casa e cia</h3>
-              Encontrar uma empresa que realmente entende as necessidades do meu negócio foi um grande desafio, até
-              conhecer a Threecom. Desde o primeiro contato, ficou claro que estávamos lidando com profissionais
-              altamente qualificados e comprometidos em entregar o melhor resultado.
-
-              Com soluções personalizadas e um suporte técnico impecável, consegui elevar a performance dos meus
-              sistemas, aprimorar a experiência dos meus clientes e garantir um ambiente seguro para meus usuários.
-              Hoje, confio totalmente na Threecom para manter minha infraestrutura digital sempre estável, eficiente e
-              protegida.
+              Encontrar uma empresa que realmente entende as necessidades do meu negócio foi um grande desafio, até conhecer a Threecom. Desde o primeiro contato, ficou claro que estávamos lidando com profissionais altamente qualificados e comprometidos em entregar o melhor resultado.
+              Com soluções personalizadas e um suporte técnico impecável, consegui elevar a performance dos meus sistemas, aprimorar a experiência dos meus clientes e garantir um ambiente seguro para meus usuários.
+              Hoje, confio totalmente na Threecom para manter minha infraestrutura digital sempre estável, eficiente e protegida.
             </div>
           </div>
           <div class="tab-content" id="client3">
             <div class="neon-card">
               <h3>Leite vanessa</h3>
-              A Threecom se destacou não apenas pela excelência técnica, mas também pela abordagem inovadora e pelo
-              compromisso com os resultados. Nossa empresa precisava de uma infraestrutura robusta e segura para lidar
-              com um grande volume de dados, e eles entregaram exatamente o que prometiam.
-
-              Com a implementação das suas soluções, conseguimos escalar nossos serviços com eficiência, garantindo um
-              sistema rápido, confiável e preparado para os desafios do futuro. A parceria com a Threecom nos trouxe uma
-              vantagem competitiva significativa no mercado.
+              A Threecom se destacou não apenas pela excelência técnica, mas também pela abordagem inovadora e pelo compromisso com os resultados. Nossa empresa precisava de uma infraestrutura robusta e segura para lidar com um grande volume de dados, e eles entregaram exatamente o que prometiam.
+              Com a implementação das suas soluções, conseguimos escalar nossos serviços com eficiência, garantindo um sistema rápido, confiável e preparado para os desafios do futuro. A parceria com a Threecom nos trouxe uma vantagem competitiva significativa no mercado.
             </div>
           </div>
         </div>
         <!-- Right Side Menu (Bigger images) -->
         <nav class="tabs-menu">
-
           <div class="button-container">
             <button class="tab-button active" data-tab="client1">
               <img src="assets/Oboticario.png" alt="Oboticário" />
               <button class="click">Clique na imagem!</button>
             </button>
           </div>
-
           <div class="button-container">
             <button class="tab-button" data-tab="client2">
               <img src="assets/casaecia.jpg" alt="Casa E cia" />
               <button class="click">Clique na imagem!</button>
             </button>
           </div>
-
           <div class="button-container">
             <button class="tab-button" data-tab="client3">
               <img src="assets/leitevanessa.jpg" alt="Leite Vanessa" />
@@ -345,13 +327,12 @@
         <div class="contact-info">
           <h2>📞 Fale Conosco</h2>
           <p>
-            Entre em contato para mais informações, orçamentos ou dúvidas. Estamos sempre prontos para ajudá-lo e
-            transformar suas ideias em realidade digital.
+            Entre em contato para mais informações, orçamentos ou dúvidas. Estamos sempre prontos para ajudá-lo e transformar suas ideias em realidade digital.
           </p>
           <ul>
             <li><strong>Telefone:</strong> (15) 99853-1707</li>
             <li><strong>Email:</strong> comercial@threecom.com.br</li>
-            <li><strong>Endereço:</strong> Rua santa clara, 446, Centro, Sorocaba</li>
+            <li><strong>Endereço:</strong> Rua Santa Clara, 446, Centro, Sorocaba</li>
           </ul>
           <form id="contact-form">
             <input type="text" id="name" placeholder="Seu Nome" required />
@@ -359,20 +340,23 @@
             <textarea id="message" placeholder="Sua Mensagem" required></textarea>
             <button type="submit">Enviar</button>
           </form>
-
         </div>
         <!-- Right Side: Google Map -->
         <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2656712697323!2d-47.435061284894414!3d-23.5011014849375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2484235ecb5f%3A0xd7c147d31a98ac7c!2sRua%20Santa%20Clara%2C%20446%20-%20Centro%2C%20Sorocaba%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1616161616161"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2656712697323!2d-47.435061284894414!3d-23.5011014849375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2484235ecb5f%3A0xd7c147d31a98ac7c!2sRua%20Santa%20Clara%2C%20446%20-%20Centro%2C%20Sorocaba%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1616161616161" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media">
+      <span class="qrcode-text">Nos acompanhe nas redes sociais!</span>
+      <img src="/assets/QRCODE REDES SOCIAIS.png" class="qrcode">
+    </section>
+
     <!-- Footer -->
     <footer>
-      <img src="assets/main-branco-cfund.png" class="footer-logo">
+      <img src="assets/main-branco-cfund.png" class="footer-logo" alt="Footer Logo">
       <p>&copy; 2025 feito por Tech Geenie Systems LTDA. Todos os direitos reservados.</p>
     </footer>
   </main>
@@ -386,7 +370,6 @@
       <button id="modalNo">Cancelar</button>
     </div>
   </div>
-
 
   <!-- Load Three.js from a CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

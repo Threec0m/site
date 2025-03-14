@@ -121,7 +121,6 @@ document.querySelectorAll("nav ul li a").forEach((anchor) => {
 });
 
 // --- Service Quote Modal & WhatsApp Integration ---
-// Use matchMedia to determine if we're on a desktop
 document.addEventListener("DOMContentLoaded", () => {
   const isDesktop = !window.matchMedia("(max-width: 768px)").matches;
   if (isDesktop) {
@@ -131,10 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalNo = document.getElementById("modalNo");
     const closeModal = document.getElementById("closeModal");
 
-    const serviceCards = document.querySelectorAll(".carousel-item");
+    // Use new class names for Planos carousel items and titles
+    const serviceCards = document.querySelectorAll(".planos-carousel-item");
     serviceCards.forEach((card) => {
       card.addEventListener("click", () => {
-        const titleElement = card.querySelector(".service-title");
+        const titleElement = card.querySelector(".plano-title");
         const serviceName = titleElement
           ? titleElement.innerText.trim()
           : "Serviço";
@@ -148,9 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const serviceName = modal.getAttribute("data-service") || "Serviço";
       const phoneNumber = "5515991569195"; // Replace with your WhatsApp number
       const text = `Olá! Gostaria de um orçamento para um serviço de ${serviceName}.`;
-      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-        text
-      )}`;
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
       window.open(whatsappURL, "_blank");
       modal.style.display = "none";
     });
@@ -183,9 +181,7 @@ document.getElementById("contact-form").addEventListener("submit", (event) => {
   }
   const phoneNumber = "5515998531707";
   const text = `Olá, meu nome é *${name}*.\nMeu e-mail: *${email}*\n\nMensagem:\n${message}`;
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    text
-  )}`;
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
   window.open(whatsappURL, "_blank");
 });
 

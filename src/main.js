@@ -1,4 +1,4 @@
-import "./style.css";
+import "./styles.css";
 
 // --- Three.js Background Waves ---
 const scene = new THREE.Scene();

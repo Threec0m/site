@@ -336,7 +336,7 @@ nav ul li a:active {
   -webkit-overflow-scrolling: touch;
 }
 
-.clientbtn{
+.clientbtn {
   background-color: rgb(1, 197, 1);
   padding: 0.5% 0.5%;
   text-decoration: none;
@@ -345,7 +345,6 @@ nav ul li a:active {
   font-size: 1em;
   margin-top: 3%;
 }
-
 
 .planos-carousel-item {
   position: relative;
@@ -741,8 +740,7 @@ body.light-mode .nav-menu {
   position: relative;
 }
 
-.inside-card{
-  
+.inside-card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -808,8 +806,9 @@ body.light-mode .nav-menu {
     height: auto;
     padding: 10px 20px;
   }
-  .logo {
-    justify-self: start;
+  .logo img {
+    /* Reduce logo size for mobile */
+    height: 100px;
   }
   .nav-menu {
     justify-self: center;
@@ -853,7 +852,7 @@ body.light-mode .nav-menu {
   }
   /* Mobile Quem Somos Overrides */
   #quem-somos {
-    padding: 70px 10px;
+    padding: 10px 10px;
     text-align: center;
   }
   #quem-somos .tabs-container {
@@ -874,7 +873,7 @@ body.light-mode .nav-menu {
   }
   /* Mobile Nossos Clientes Overrides */
   #nossos-clientes {
-    padding: 70px 10px;
+    padding: 10px 10px;
     text-align: center;
   }
   #nossos-clientes .tabs-container {
@@ -896,9 +895,22 @@ body.light-mode .nav-menu {
     content: none;
     display: none;
   }
+  /* Adjust carousel items for smaller screens */
+  .planos-carousel-item {
+    width: 250px;
+    height: 400px;
+  }
+  /* Stack service cards vertically on mobile */
+  .servicos-cards-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Adjust the contact map height */
+  .contact-map {
+    height: 300px;
+  }
 }
 
-/* Additional Mobile Adjustments (max-width: 480px) */
 @media (max-width: 480px) {
   .click {
     font-size: 0.9rem;
@@ -967,4 +979,3 @@ body.light-mode .nav-menu {
   margin-top: 5%;
   font-size: 1em;
 }
-

@@ -336,6 +336,17 @@ nav ul li a:active {
   -webkit-overflow-scrolling: touch;
 }
 
+.clientbtn{
+  background-color: rgb(1, 197, 1);
+  padding: 0.5% 0.5%;
+  text-decoration: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1em;
+  margin-top: 3%;
+}
+
+
 .planos-carousel-item {
   position: relative;
   flex: 0 0 auto;
@@ -730,6 +741,14 @@ body.light-mode .nav-menu {
   position: relative;
 }
 
+.inside-card{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -948,3 +967,4 @@ body.light-mode .nav-menu {
   margin-top: 5%;
   font-size: 1em;
 }
+

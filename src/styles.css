@@ -1,6 +1,7 @@
 /* Root Variables */
 :root {
-  --hue: 210; /* Adjusted hue for a refined blue tone */
+  --hue: 210;
+  /* Adjusted hue for a refined blue tone */
   --bg: hsl(var(--hue), 10%, 90%);
   --fg: hsl(var(--hue), 10%, 10%);
   --primary: hsl(var(--hue), 90%, 50%);
@@ -54,7 +55,7 @@ body {
   width: 0.75em;
   height: 0.75em;
   transition: opacity calc(var(--trans-dur) / 2),
-              transform calc(var(--trans-dur) / 2);
+    transform calc(var(--trans-dur) / 2);
 }
 
 .switch__icon polyline {
@@ -77,7 +78,7 @@ body {
   background-color: hsl(210, 90%, 70%);
   border-radius: 0.75em;
   box-shadow: 0 0 0 0.125em hsla(var(--hue), 90%, 50%, 0),
-              0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
+    0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
   outline: transparent;
   position: relative;
   width: 3em;
@@ -86,12 +87,12 @@ body {
   appearance: none;
   -webkit-tap-highlight-color: transparent;
   transition: background-color var(--trans-dur) var(--trans-timing),
-              box-shadow 0.15s linear;
+    box-shadow 0.15s linear;
 }
 
 .switch__input:focus-visible {
   box-shadow: 0 0 0 0.125em hsl(var(--hue), 90%, 50%),
-              0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
+    0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
 }
 
 .switch__input:before,
@@ -119,7 +120,7 @@ body {
   width: 1.25em;
   height: 1.25em;
   transition: background-color var(--trans-dur) var(--trans-timing),
-              transform var(--trans-dur) var(--trans-timing);
+    transform var(--trans-dur) var(--trans-timing);
   z-index: 1;
 }
 
@@ -210,7 +211,8 @@ section {
   background: rgba(0, 0, 0, 0.7);
   top: 0;
   width: 100%;
-  min-height: 140px; /* Changed from fixed height to min-height */
+  min-height: 140px;
+  /* Changed from fixed height to min-height */
   z-index: 1000;
 }
 
@@ -751,6 +753,7 @@ body.light-mode .nav-menu {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -801,18 +804,22 @@ body.light-mode .nav-menu {
   section {
     scroll-margin-top: 20px;
   }
+
   .site-header {
     grid-template-columns: auto 1fr;
     height: auto;
     padding: 10px 20px;
   }
+
   .logo img {
     /* Reduce logo size for mobile */
     height: 100px;
   }
+
   .nav-menu {
     justify-self: center;
   }
+
   .menu-toggle {
     display: block;
     justify-self: end;
@@ -825,6 +832,7 @@ body.light-mode .nav-menu {
     left: 20px;
     z-index: 1100;
   }
+
   .nav-menu {
     display: none;
     background: rgba(0, 0, 0, 0.9);
@@ -834,77 +842,94 @@ body.light-mode .nav-menu {
     width: 100%;
     z-index: 1050;
   }
+
   .nav-menu.active {
     display: block;
   }
+
   .nav-menu ul {
     list-style: none;
     padding: 10px 0;
     margin: 0;
     text-align: center;
   }
+
   .nav-menu ul li {
     margin: 10px 0;
   }
+
   .nav-menu ul li a {
     padding: 10px 15px;
     font-size: 0.9em;
   }
+
   /* Mobile Quem Somos Overrides */
   #quem-somos {
     padding: 10px 10px;
     text-align: center;
   }
+
   #quem-somos .tabs-container {
     flex-direction: column;
     gap: 20px;
   }
+
   #quem-somos .tabs-menu {
     flex-direction: row;
     justify-content: center;
     gap: 10px;
   }
+
   #quem-somos .tab-button::after {
     display: none;
   }
+
   #quem-somos .tabs-content {
     max-height: 300px;
     overflow-y: auto;
   }
+
   /* Mobile Nossos Clientes Overrides */
   #nossos-clientes {
     padding: 10px 10px;
     text-align: center;
   }
+
   #nossos-clientes .tabs-container {
     flex-direction: column;
     gap: 20px;
   }
+
   #nossos-clientes .tabs-menu {
     order: -1;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
   }
+
   #nossos-clientes .tabs-content {
     order: 1;
     max-height: 300px;
     overflow-y: auto;
   }
+
   #nossos-clientes .tab-button::after {
     content: none;
     display: none;
   }
+
   /* Adjust carousel items for smaller screens */
   .planos-carousel-item {
     width: 250px;
     height: 400px;
   }
+
   /* Stack service cards vertically on mobile */
   .servicos-cards-row {
     flex-direction: column;
     align-items: center;
   }
+
   /* Adjust the contact map height */
   .contact-map {
     height: 300px;
@@ -918,14 +943,17 @@ body.light-mode .nav-menu {
     display: inline-block;
     height: 40px;
   }
+
   body {
     font-size: 14px;
   }
+
   .modal-content {
     width: 90%;
     margin: 30% auto;
     padding: 15px;
   }
+
   .modal-content button {
     margin: 10px 15px;
     padding: 10px 18px;
@@ -978,4 +1006,27 @@ body.light-mode .nav-menu {
   color: white;
   margin-top: 5%;
   font-size: 1em;
+}
+
+.zapBtn {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 50px;
+  color: white;
+  margin-top: 5%;
+  font-size: 1em;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  /* fixed relative to the viewport */
+  bottom: 50px;
+  /* 10px from the bottom */
+  right: 50px;
+  /* 10px from the right */
+  z-index: 1000;
+  /* ensures it appears above other content */
+}
+
+.zapImg {
+  width: 100px;
 }

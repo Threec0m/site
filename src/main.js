@@ -144,6 +144,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    document.querySelector('.zapBtn').addEventListener('click', () => {
+      const phoneNumber = "5515998531707"; // Replace with your number
+      const message = "Olá! Gostaria de saber mais sobre os serviços da Threecom.";
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, "_blank");
+    });
+
     modalYes.addEventListener("click", () => {
       const serviceName = modal.getAttribute("data-service") || "Serviço";
       const phoneNumber = "5515998531707";
@@ -168,22 +175,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-// --- Contact Form WhatsApp Integration ---
 document.getElementById("contact-form").addEventListener("submit", (event) => {
   event.preventDefault();
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
+  
   if (!name || !email || !message) {
     alert("Por favor, preencha todos os campos antes de enviar.");
     return;
   }
-  const phoneNumber = "5515998531707";
-  const text = `Olá, meu nome é *${name}*.\nMeu e-mail: *${email}*\n\nMensagem:\n${message}`;
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-  window.open(whatsappURL, "_blank");
+  
+  const subject = encodeURIComponent("Contato via Site Threecom");
+  const body = encodeURIComponent(`Olá, meu nome é ${name}.\n\nVenho Do site da threecom.com.br\n${message}`);
+  
+  // This will open the user's default email client
+  window.location.href = `mailto:comercial@threecom.com.br?subject=${subject}&body=${body}`;
 });
+
 
 // --- Mobile Navigation Toggle ---
 document.addEventListener("DOMContentLoaded", () => {

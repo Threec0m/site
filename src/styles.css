@@ -517,7 +517,7 @@ nav ul li a:active {
 #contact input,
 #contact textarea {
   padding: 10px;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
   font-size: 1em;
   width: 100%;
@@ -806,6 +806,7 @@ body.light-mode .nav-menu {
   }
 
   .site-header {
+    position: relative;
     grid-template-columns: auto 1fr;
     height: auto;
     padding: 10px 20px;
@@ -838,7 +839,6 @@ body.light-mode .nav-menu {
     background: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 100%;
-    left: 0;
     width: 100%;
     z-index: 1050;
   }

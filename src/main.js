@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector('.zapBtn').addEventListener('click', () => {
       const phoneNumber = "5515998531707"; // Replace with your number
-      const message = "Olá! Gostaria de saber mais sobre os serviços da Threecom.";
+      const message = "Olá, meu nome é ${name}.\n\nVenho Do site da threecom.com.br\n${message}\n.Poderia entrar em contato comigo?\n\n.Att.";
       const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappURL, "_blank");
     });
@@ -187,7 +187,8 @@ document.getElementById("contact-form").addEventListener("submit", (event) => {
   }
   
   const subject = encodeURIComponent("Contato via Site Threecom");
-  const body = encodeURIComponent(`Olá, meu nome é ${name}.\n\nVenho Do site da threecom.com.br\n${message}`);
+  const body = encodeURIComponent(`Olá, meu nome é ${name}.\n\nVenho Do site da threecom.com.br\n${message}\n.Poderia entrar em contato comigo?\n\n
+.Att.`);
   
   // This will open the user's default email client
   window.location.href = `mailto:comercial@threecom.com.br?subject=${subject}&body=${body}`;
